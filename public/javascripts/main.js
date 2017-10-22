@@ -1,7 +1,3 @@
-const GG_API_KEY = 'AIzaSyCma6bUzscck3QFJcmoQILck898CRUVg2k';
-const INSTAGRAM_API_CLIENT_ID = 'c923b75720c64927a425ab6248818bf4';
-const INSTAGRAM_REDIRECT_URI = 'http://localhost:3000';
-
 $(window).on('load', function () {
     let access_token = window.location.hash;
     if (access_token.length > 0) {
