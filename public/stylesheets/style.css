@@ -1,0 +1,134 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body, html {
+    height: 85%;
+}
+
+input[type=text] {
+    width: 90%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+#content {
+    padding: 20px;
+    height: 100%;
+}
+
+#location-content {
+    width: 30%;
+    float: left;
+    padding-right: 40px;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+#media-content {
+    float: left;
+    width: 60%;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+#media-content .media-item img {
+    width: 130px;
+    min-height: 130px;
+    height: auto;
+}
+
+#content ul li {
+    list-style-type: none;
+}
+
+#location-content .location-item {
+    background-color: #2196F3;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#location-content .location-item:hover {
+    background-color: #2059f3;
+}
+
+#location-content .location-item p {
+    font-size: 13px;
+    padding-left: 15px;
+    margin: 0px;
+    color: #ffffff;
+}
+
+#location-content .location-item {
+    padding-bottom: 15px;
+}
+
+#location-content .location-item p.title {
+    color: #e0ffdc;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+#media-content ul li {
+    padding: 10px;
+    float: left;
+}
+
+.loader {
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.loader .pre-loader {
+    background-image: url('/images/loader.gif');
+    background-repeat: no-repeat;
+    height: 50%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    animation: unset !important;
+}
+
+.btn {
+    background-repeat: no-repeat;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display: inline-block;
+    padding: 10px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 4px;
+}

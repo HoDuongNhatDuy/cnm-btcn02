@@ -1,0 +1,5 @@
+module.exports = {
+    INSTAGRAM_API_CLIENT_ID:'cd7e2ab10216449a80e88291048d25db',
+    INSTAGRAM_API_CLIENT_SECRET: '375d73493fc74b20a05b8227cec67ecf',
+    INSTAGRAM_REDIRECT_URI: 'http://localhost:3000'
+};
