@@ -19,7 +19,7 @@ function send_https_GET_request(url, result) {
         method: "GET"
     };
 
-    request('https://www.instagram.com/explore/locations/212988663/?__a=1', function (error, response, body) {
+    request('https://maps.googleapis.com/maps/api/geocode/json?address=Tay%20Ninh&key=AIzaSyCma6bUzscck3QFJcmoQILck898CRUVg2k', function (error, response, body) {
         console.log(body);
         result({abc: "sdf", xyz: "sdf"});
     });
