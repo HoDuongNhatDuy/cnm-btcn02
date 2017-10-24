@@ -17,17 +17,17 @@ function send_https_GET_request(url, result) {
         path: "/explore/locations/212988663/?__a=1",
         method: "GET"
     };
-    let req = https.request(options, function(res)
+    let req = https.request(options, function(response)
     {
         var output = '';
         res.setEncoding('utf8');
 
-        res.on('data', function (chunk) {
+        response.on('data', function (chunk) {
             output += chunk;
             console.log(3);
         });
 
-        res.on('end', function() {
+        response.on('end', function() {
             console.log(4);
             console.log("asdas" + output);
             let obj = JSON.parse(output);
