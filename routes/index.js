@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var http = require("http");
 var https = require("https");
+var request = require('request');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -17,31 +18,10 @@ function send_https_GET_request(url, result) {
         path: "/explore/locations/212988663/?__a=1",
         method: "GET"
     };
-    var req = https.request(options, function(res)
-    {
-        var output = '';
-        res.setEncoding('utf8');
 
-        res.on('data', function (chunk) {
-            output += chunk;
-            console.log(3);
-        });
-
-        res.on('end', function() {
-            console.log(4);
-            console.log("asdas" + output);
-            var obj = JSON.parse(output);
-            result(obj);
-        });
+    request('https://www.instagram.com/explore/locations/212988663/?__a=1', function (error, response, body) {
+        result(JSON.parse(body));
     });
-
-    req.on('error', function(err) {
-        console.log(5);
-        console.log(err);
-    });
-
-    console.log(6);
-    req.end();
 }
 
 router.get('/get-instagram-location-media', function(req, res, next) {
