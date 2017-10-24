@@ -17,20 +17,20 @@ function send_https_GET_request(url, result) {
         path: "/explore/locations/212988663/?__a=1",
         method: "GET"
     };
-    let req = https.request(options, function(response)
+    var req = https.request(options, function(res)
     {
         var output = '';
         res.setEncoding('utf8');
 
-        response.on('data', function (chunk) {
+        res.on('data', function (chunk) {
             output += chunk;
             console.log(3);
         });
 
-        response.on('end', function() {
+        res.on('end', function() {
             console.log(4);
             console.log("asdas" + output);
-            let obj = JSON.parse(output);
+            var obj = JSON.parse(output);
             result(obj);
         });
     });
@@ -46,8 +46,8 @@ function send_https_GET_request(url, result) {
 
 router.get('/get-instagram-location-media', function(req, res, next) {
 
-    let location_id = req.query.location_id;
-    let url = `https://www.instagram.com/explore/locations/${location_id}/?__a=1`;
+    var location_id = req.query.location_id;
+    var url = `https://www.instagram.com/explore/locations/${location_id}/?__a=1`;
 console.log(url);
     console.log(1);
     send_https_GET_request(url, function (response) {
