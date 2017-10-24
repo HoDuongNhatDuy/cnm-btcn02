@@ -11,7 +11,13 @@ router.get('/', function(req, res, next) {
 function send_https_GET_request(url, result) {
     console.log(2);
 
-    let req = https.get(url, function(res)
+    var options = {
+        hostname: "www.instagram.com",
+        port: 443,
+        path: "/explore/locations/212988663/?__a=1",
+        method: "GET"
+    };
+    let req = https.request(options, function(res)
     {
         var output = '';
         res.setEncoding('utf8');
