@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
 });
 
 function send_https_GET_request(url, result) {
-    console.log(2);
 
     var options = {
         url: url,
