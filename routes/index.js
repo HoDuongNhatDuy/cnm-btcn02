@@ -15,7 +15,7 @@ function send_https_GET_request(url, result) {
     var options = {
         url: 'https://www.instagram.com/explore/locations/212988663/?__a=1',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'json'
         }
     };
 

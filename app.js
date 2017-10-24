@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
-var httpProxy = require('http-proxy');
 
 var app = express();
 
@@ -42,13 +41,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-httpProxy.createProxyServer({
-    target: 'http://my.app.com',
-    toProxy: true,
-    changeOrigin: true,
-    xfwd: true
 });
 
 module.exports = app;
