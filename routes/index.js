@@ -12,7 +12,7 @@ function send_https_GET_request(url, result) {
 
     let req = https.get(url, function(res)
     {
-        var output = '';
+        let output = '';
         res.setEncoding('utf8');
 
         res.on('data', function (chunk) {
@@ -38,10 +38,10 @@ router.get('/get-instagram-location-media', function(req, res, next) {
     let location_id = req.query.location_id;
     let url = `https://www.instagram.com/explore/locations/${location_id}/?__a=1`;
 
-    // send_https_GET_request(url, function (response) {
-    //     res.json(response);
-    // });
-    res.end("123");
+    send_https_GET_request(url, function (response) {
+        res.json(response);
+        res.end();
+    });
 });
 
 module.exports = router;
