@@ -20,7 +20,10 @@ function send_https_GET_request(url, result) {
     };
 
     request(options, function (error, response, body) {
-        result(JSON.parse(body));
+        if (body && body != '')
+            result(JSON.parse(body));
+        else
+            result({});
     });
 
 }
