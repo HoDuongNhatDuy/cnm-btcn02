@@ -18,7 +18,6 @@ function gg_api_get_geocode_data(address, callback) {
     let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + GG_API_KEY;
 
     $.get(url, function (response) {
-        console.log(response);
         callback(response.results);
 
     });
@@ -37,19 +36,13 @@ function instagram_api_search_location(lat, lng, callback) {
 }
 
 function instagram_api_get_location_media(location_id, callback) {
-    // TODO implement this function
-    let res = [
-        {id: 1},
-        {id: 2},
-        {id: 3},
-        {id: 4},
-        {id: 5},
-        {id: 6},
-        {id: 7},
-        {id: 8},
-        {id: 9},
-    ];
-    callback(res);
+    $.get(`/get-instagram-location-media/?location_id=${location_id}`, function (response) {
+        // console.log(response);
+
+        let res = response.location.media.nodes;
+        callback(res);
+
+    });
 }
 
 
@@ -79,6 +72,9 @@ function show_media_loader() {
 }
 
 function render_single_location(location) {
+    if (location.id < 1)
+        return "";
+
     let html = `
             <li id="location-${location.id}" style="display: none;" class="location-item" data-location-id="${location.id}">
                 <p class="title">${location.name}</p>
@@ -122,9 +118,13 @@ $('#search-form').submit(function (e) {
 });
 
 function render_single_media(media) {
+    console.log(media);
     let html = `
-        <li style="display: none;" id="media-${media.id}" class="media-item">
-            <img src="//:0">
+        <li> 
+            <a target="_blank" href="https://www.instagram.com/p/${media.code}/?explore=true">
+                <div style="display: none; background-image: url('${media.display_src}')" title="${media.caption}" id="media-${media.id}" class="media-item">
+                </div>
+            </a>
         </li>
     `;
     return html;

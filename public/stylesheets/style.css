@@ -43,8 +43,7 @@ input[type=text] {
 }
 
 #media-content .media-item img {
-    width: 130px;
-    min-height: 130px;
+    width: 100%;
     height: auto;
 }
 
@@ -81,9 +80,15 @@ input[type=text] {
     font-weight: bold;
 }
 
-#media-content ul li {
+#media-content ul li .media-item {
+    margin: 5px;
     padding: 10px;
     float: left;
+    width: 130px;
+    height: 130px;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
 }
 
 .loader {
