@@ -13,17 +13,15 @@ function send_https_GET_request(url, result) {
     console.log(2);
 
     var options = {
-        url: 'https://www.instagram.com/explore/locations/212988663/?__a=1',
-        headers: {
-            'Content-Type': 'application/json'
-        }
+        url: url,
+        type: "json/application",
+        // headers: {
+        //     "referer": "https://www.instagram.com"
+        // }
     };
 
     request(options, function (error, response, body) {
-        console.log(error);
-        console.log(response);
-        console.log(body);
-        result({abc: "sdf", xyz: "sdf"});
+        result(JSON.parse(body));
     });
 
 }
