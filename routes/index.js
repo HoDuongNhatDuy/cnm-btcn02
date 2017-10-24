@@ -13,9 +13,9 @@ function send_https_GET_request(url, result) {
     console.log(2);
 
     var options = {
-        url: 'https://maps.googleapis.com/maps/api/geocode/json?address=Tay%20Ninh&key=AIzaSyCma6bUzscck3QFJcmoQILck898CRUVg2k',
+        url: 'https://www.instagram.com/explore/locations/212988663/?__a=1',
         headers: {
-            'Content-Type': 'json/application'
+            'Content-Type': 'application/json'
         }
     };
 
