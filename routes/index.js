@@ -23,7 +23,7 @@ function send_https_GET_request(url, result) {
 
         res.on('end', function() {
             console.log(4);
-            console.log("asdas" . output);
+            console.log("asdas" + output);
             let obj = JSON.parse(output);
             result(obj);
         });
