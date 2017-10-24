@@ -19,12 +19,11 @@ function send_https_GET_request(url, result) {
         method: "GET"
     };
 
-    // request('http://taimienphi.vn/download-winrar-11', function (error, response, body) {
-    //     console.log(body);
-    //     result(JSON.parse(body));
-    // });
+    request('https://www.instagram.com/explore/locations/212988663/?__a=1', function (error, response, body) {
+        console.log(body);
+        result({abc: "sdf", xyz: "sdf"});
+    });
 
-    result({abc: "sdf", xyz: "sdf"});
 }
 
 router.get('/get-instagram-location-media', function(req, res, next) {
