@@ -13,13 +13,12 @@ function send_https_GET_request(url, result) {
 
     let req = https.get(url, function(res)
     {
-        let output = '';
+        var output = '';
         res.setEncoding('utf8');
 
         res.on('data', function (chunk) {
             output += chunk;
             console.log(3);
-
         });
 
         res.on('end', function() {
