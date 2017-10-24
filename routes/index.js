@@ -42,7 +42,7 @@ router.get('/get-instagram-location-media', function(req, res, next) {
 
     let location_id = req.query.location_id;
     let url = `https://www.instagram.com/explore/locations/${location_id}/?__a=1`;
-
+console.log(url);
     console.log(1);
     send_https_GET_request(url, function (response) {
         console.log(7);
