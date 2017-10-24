@@ -13,13 +13,13 @@ function send_https_GET_request(url, result) {
     console.log(2);
 
     var options = {
-        hostname: "www.instagram.com",
-        port: 443,
-        path: "/explore/locations/212988663/?__a=1",
-        method: "GET"
+        url: 'https://www.instagram.com/explore/locations/212988663/?__a=1',
+        headers: {
+            'content-type': 'application/json'
+        }
     };
 
-    request('https://www.instagram.com/explore/locations/212988663/?__a=1', function (error, response, body) {
+    request(options, function (error, response, body) {
         console.log(error);
         console.log(response);
         console.log(body);
